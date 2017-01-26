@@ -27,3 +27,15 @@ class CfgDebriefingSections {
     variable = "acex_killTracker_outputText";
   };
 };
+
+
+class CfgSounds
+{
+	class bcg_wind
+	{
+		name = "bcg_wind";
+		sound[] = {"\sound\bcg_wind.ogg", 0.3, 1};
+		titles[] = {1, ""};
+	};	
+};
+
