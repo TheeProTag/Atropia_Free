@@ -8,14 +8,14 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=1366;
+		nextID=1430;
 	};
 	class Camera
 	{
-		pos[]={8489.2012,423.06607,6616.1797};
-		dir[]={-0.044393063,-0.51890957,-0.85381389};
-		up[]={-0.02694767,0.85471636,-0.51822156};
-		aside[]={-0.99874848,1.6065151e-006,0.051939592};
+		pos[]={7134.4058,466.91342,8050.4507};
+		dir[]={0.9010759,-0.3399682,-0.26969099};
+		up[]={0.32575929,0.94027954,-0.09750025};
+		aside[]={-0.28676739,-1.0071744e-006,-0.95810395};
 	};
 };
 binarizationWanted=0;
@@ -30,13 +30,16 @@ addons[]=
 	"rhsusf_vehicles",
 	"rhs_c_t72",
 	"ace_compat_rhs_afrf3",
-	"rhsgref_c_vehicles_ret"
+	"rhsgref_c_vehicles_ret",
+	"uns_sheridan_c",
+	"A3_Structures_F_Mil_BagBunker",
+	"CUP_Misc3_Config"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=10;
+		items=13;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -104,6 +107,23 @@ class AddonsMetaData
 			name="GREF Vehicle Retextures";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
+		};
+		class Item10
+		{
+			className="uns_sheridan_c";
+			name="uns_sheridan_c";
+		};
+		class Item11
+		{
+			className="A3_Structures_F_Mil";
+			name="Arma 3 - Military Buildings and Structures";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+		class Item12
+		{
+			className="CUP_Misc3_Config";
+			name="CUP_Misc3_Config";
 		};
 	};
 };
@@ -768,7 +788,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=53;
+		items=77;
 		class Item0
 		{
 			dataType="Group";
@@ -5558,8 +5578,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6437.2295,330.0694,8114.5469};
-						angles[]={6.2243824,2.2072392,0.027167445};
+						position[]={7005.395,288.86996,7565.8345};
+						angles[]={6.183517,2.2072392,0};
 					};
 					side="East";
 					flags=6;
@@ -5601,8 +5621,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6437.73,330.30875,8118.9863};
-						angles[]={6.2334056,2.196383,0.027167445};
+						position[]={7005.8955,289.30783,7570.2739};
+						angles[]={6.1861606,2.196383,0.0012918708};
 					};
 					side="East";
 					flags=4;
@@ -5663,8 +5683,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6433.0405,329.85815,8112.5479};
-						angles[]={6.2288938,2.2388818,0.022635888};
+						position[]={7001.2061,288.64984,7563.8354};
+						angles[]={6.1848383,2.2388818,0.0040116427};
 					};
 					side="East";
 					flags=4;
@@ -5725,8 +5745,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6434.4561,330.09619,8116.4565};
-						angles[]={6.233407,2.2161577,0.022643786};
+						position[]={7002.6216,289.04794,7567.7441};
+						angles[]={6.1848388,2.2161577,0.0053377044};
 					};
 					side="East";
 					flags=4;
@@ -5875,14 +5895,14 @@ class Mission
 			side="East";
 			class Entities
 			{
-				items=2;
+				items=1;
 				class Item0
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6436.0459,331.39899,8140.1865};
-						angles[]={6.228888,2.2161493,0.027157323};
+						position[]={7246.103,294.18021,7627.7378};
+						angles[]={0,2.2161493,0};
 					};
 					side="East";
 					flags=6;
@@ -5890,11 +5910,13 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="SERGEANT";
+						init="this setUnitPos ""UP"";";
 						name="UNIT_OPF_ASL_SL";
 						description="OpFor Alpha Squad Leader";
 					};
 					id=1067;
 					type="O_Soldier_SL_F";
+					atlOffset=0.00042724609;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -5938,74 +5960,13 @@ class Mission
 						nAttributes=2;
 					};
 				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6431.96,331.17438,8138.0962};
-						angles[]={6.228888,2.2161493,0.027157323};
-					};
-					side="East";
-					flags=4;
-					class Attributes
-					{
-						skill=0.60000002;
-						rank="CORPORAL";
-						name="UNIT_OPF_ASL_M";
-						description="OpFor Alpha Medic";
-					};
-					id=1068;
-					type="O_medic_F";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="potato_markers_addMarker";
-							expression="[_this, _value] call potato_markers_fnc_setMarker;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value=" ,16,red,sc_mapmarkers\data\u_medic.paa";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="potato_radios_radio";
-							expression="[_this, _value] call potato_radios_fnc_setChannels";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="0,0,0";
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
 			};
 			class Attributes
 			{
 				name="GROUP_OPF_ASL";
 			};
 			id=1066;
+			atlOffset=0.00042724609;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6093,335 +6054,26 @@ class Mission
 			side="East";
 			class Entities
 			{
-				items=6;
+				items=1;
 				class Item0
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6429.6514,331.47784,8144.8345};
-						angles[]={6.2288928,2.2161577,0.027165251};
+						position[]={7138.5801,280.00174,7504.1689};
+						angles[]={0,1.2541504,0};
 					};
 					side="East";
 					flags=6;
 					class Attributes
 					{
 						skill=0.60000002;
-						rank="CORPORAL";
-						name="UNIT_OPF_A1_FTL";
-						description="OpFor Alpha 1 Fireteam Leader";
-					};
-					id=1070;
-					type="O_Soldier_TL_F";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="potato_radios_radio";
-							expression="[_this, _value] call potato_radios_fnc_setChannels";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="0,0,0";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="potato_teamColors_teamColor";
-							expression="[_this, _value] call potato_teamColors_fnc_setColor";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="RED";
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6428.9019,331.82059,8150.4795};
-						angles[]={6.2334056,2.2161577,0.027167445};
-					};
-					side="East";
-					flags=4;
-					class Attributes
-					{
-						skill=0.60000002;
-						name="UNIT_OPF_A1_AR";
-						description="OpFor Alpha 1 Automatic Rifleman";
-					};
-					id=1071;
-					type="O_Soldier_AR_F";
-					atlOffset=0.0809021;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="potato_radios_radio";
-							expression="[_this, _value] call potato_radios_fnc_setChannels";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="0,0,0";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="potato_teamColors_teamColor";
-							expression="[_this, _value] call potato_teamColors_fnc_setColor";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="RED";
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item2
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6431.75,331.90784,8150.9385};
-						angles[]={6.2334056,2.2161577,0.027167445};
-					};
-					side="East";
-					flags=4;
-					class Attributes
-					{
-						skill=0.60000002;
-						name="UNIT_OPF_A1_AAR";
-						description="OpFor Alpha 1 Assistant Automatic Rifleman";
-					};
-					id=1072;
-					type="O_Soldier_AAR_F";
-					atlOffset=0.067932129;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="potato_radios_radio";
-							expression="[_this, _value] call potato_radios_fnc_setChannels";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="0,0,0";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="potato_teamColors_teamColor";
-							expression="[_this, _value] call potato_teamColors_fnc_setColor";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="RED";
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item3
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6425.0063,331.61285,8148.4058};
-						angles[]={6.2334056,2.2161577,0.027167445};
-					};
-					side="East";
-					flags=4;
-					class Attributes
-					{
-						skill=0.60000002;
-						name="UNIT_OPF_A1_AT1";
-						description="OpFor Alpha 1 Rifleman (AT)";
-					};
-					id=1073;
-					type="O_Soldier_LAT_F";
-					atlOffset=0.082336426;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="potato_radios_radio";
-							expression="[_this, _value] call potato_radios_fnc_setChannels";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="0,0,0";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="potato_teamColors_teamColor";
-							expression="[_this, _value] call potato_teamColors_fnc_setColor";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="MAIN";
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item4
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6424.5229,331.14865,8141.3418};
-						angles[]={6.2288928,2.2161577,0.027165251};
-					};
-					side="East";
-					flags=4;
-					class Attributes
-					{
-						skill=0.60000002;
+						init="this setUnitPos ""UP"";";
 						name="UNIT_OPF_A1_R";
 						description="OpFor Alpha 1 Rifleman ";
 					};
 					id=1075;
 					type="O_Soldier_F";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="potato_radios_radio";
-							expression="[_this, _value] call potato_radios_fnc_setChannels";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="0,0,0";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="potato_teamColors_teamColor";
-							expression="[_this, _value] call potato_teamColors_fnc_setColor";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="MAIN";
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item5
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6424.2036,331.32632,8144.2163};
-						angles[]={6.2288928,2.2161577,0.027165251};
-					};
-					side="East";
-					flags=4;
-					class Attributes
-					{
-						skill=0.60000002;
-						name="UNIT_OPF_A1_AT2";
-						description="OpFor Alpha 1 Rifleman (AT)";
-					};
-					id=1325;
-					type="O_Soldier_LAT_F";
-					atlOffset=0.03012085;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -6558,14 +6210,14 @@ class Mission
 			side="East";
 			class Entities
 			{
-				items=6;
+				items=5;
 				class Item0
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6418.5557,331.60452,8153.2168};
-						angles[]={6.2288938,2.2161577,0.022643786};
+						position[]={7180.4556,258.5032,7137.8188};
+						angles[]={0.010664274,2.2161577,6.1050916};
 					};
 					side="East";
 					flags=6;
@@ -6626,20 +6278,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6417.8472,331.99213,8158.8794};
-						angles[]={6.2288938,2.2161577,0.022643786};
+						position[]={7182.4639,258.07758,7143.813};
+						angles[]={0.0080009829,2.2161577,6.1089687};
 					};
 					side="East";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
-						name="UNIT_OPF_A2_AR";
-						description="OpFor Alpha 2 Automatic Rifleman";
+						name="UNIT_OPF_A2_AAR";
+						description="OpFor Alpha 2 Assistant Automatic Rifleman";
 					};
-					id=1078;
-					type="O_Soldier_AR_F";
-					atlOffset=0.095947266;
+					id=1079;
+					type="O_Soldier_AAR_F";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -6688,132 +6339,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6420.564,332.04984,8159.2109};
-						angles[]={6.2288928,2.2161577,0.027165251};
-					};
-					side="East";
-					flags=4;
-					class Attributes
-					{
-						skill=0.60000002;
-						name="UNIT_OPF_A2_AAR";
-						description="OpFor Alpha 2 Assistant Automatic Rifleman";
-					};
-					id=1079;
-					type="O_Soldier_AAR_F";
-					atlOffset=0.071533203;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="potato_radios_radio";
-							expression="[_this, _value] call potato_radios_fnc_setChannels";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="0,0,0";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="potato_teamColors_teamColor";
-							expression="[_this, _value] call potato_teamColors_fnc_setColor";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="BLUE";
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item3
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6413.7617,331.79865,8156.7764};
-						angles[]={6.2288938,2.2161577,0.022643786};
-					};
-					side="East";
-					flags=4;
-					class Attributes
-					{
-						skill=0.60000002;
-						name="UNIT_OPF_A2_AT1";
-						description="OpFor Alpha 2 Rifleman (AT)";
-					};
-					id=1080;
-					type="O_Soldier_LAT_F";
-					atlOffset=0.10928345;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="potato_radios_radio";
-							expression="[_this, _value] call potato_radios_fnc_setChannels";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="0,0,0";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="potato_teamColors_teamColor";
-							expression="[_this, _value] call potato_teamColors_fnc_setColor";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="MAIN";
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item4
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6413.54,331.3107,8149.6597};
-						angles[]={6.2334151,2.2161577,0.022635888};
+						position[]={7175.4399,258.83304,7134.2617};
+						angles[]={0.022662206,2.2161577,5.9423628};
 					};
 					side="East";
 					flags=4;
@@ -6868,67 +6395,29 @@ class Mission
 						nAttributes=2;
 					};
 				};
-				class Item5
+				class Item3
 				{
-					dataType="Object";
-					class PositionInfo
+					dataType="Waypoint";
+					position[]={7387.1973,290.88098,7159.7246};
+					class Effects
 					{
-						position[]={6413.0171,331.48364,8152.4082};
-						angles[]={6.233407,2.2161577,0.022643786};
 					};
-					side="East";
-					flags=4;
-					class Attributes
+					showWP="NEVER";
+					id=1426;
+					type="Move";
+					atlOffset=-0.00042724609;
+				};
+				class Item4
+				{
+					dataType="Waypoint";
+					position[]={7211.2905,258.59329,7137.1479};
+					type="Cycle";
+					class Effects
 					{
-						skill=0.60000002;
-						name="UNIT_OPF_A2_AT2";
-						description="OpFor Alpha 2 Rifleman (AT)";
 					};
-					id=1326;
-					type="O_Soldier_LAT_F";
-					atlOffset=0.04788208;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="potato_radios_radio";
-							expression="[_this, _value] call potato_radios_fnc_setChannels";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="0,0,0";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="potato_teamColors_teamColor";
-							expression="[_this, _value] call potato_teamColors_fnc_setColor";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="MAIN";
-								};
-							};
-						};
-						nAttributes=2;
-					};
+					showWP="NEVER";
+					id=1427;
+					atlOffset=3.0517578e-005;
 				};
 			};
 			class Attributes
@@ -7029,8 +6518,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6424.0732,330.24762,8124.0762};
-						angles[]={6.2288938,2.2161577,0.022635888};
+						position[]={6992.2388,289.70233,7575.3638};
+						angles[]={6.1848388,2.2161577,0.013327583};
 					};
 					side="East";
 					flags=6;
@@ -7091,8 +6580,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6420.1289,330.06885,8122.0508};
-						angles[]={6.233407,2.2161577,0.022643786};
+						position[]={6988.2944,289.4408,7573.3384};
+						angles[]={6.1861563,2.2161577,0.020001993};
 					};
 					side="East";
 					flags=4;
@@ -7105,7 +6594,7 @@ class Mission
 					};
 					id=1085;
 					type="O_medic_F";
-					atlOffset=0.018371582;
+					atlOffset=3.0517578e-005;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -7248,8 +6737,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6417.5713,330.37665,8128.9575};
-						angles[]={6.2288928,2.2161577,0.018112784};
+						position[]={6279.0229,337.6571,8018.4868};
+						angles[]={6.2791886,2.2161577,6.140996};
 					};
 					side="East";
 					flags=6;
@@ -7310,8 +6799,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6416.9258,330.6723,8134.4429};
-						angles[]={6.2334151,2.2161577,0.022635888};
+						position[]={6278.3774,337.81442,8023.9722};
+						angles[]={6.2791886,2.2161577,6.140996};
 					};
 					side="East";
 					flags=4;
@@ -7372,8 +6861,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6419.666,330.7355,8134.8838};
-						angles[]={6.2334151,2.2161577,0.022635888};
+						position[]={6281.1177,337.39124,8024.4131};
+						angles[]={0,2.2161577,6.1370783};
 					};
 					side="East";
 					flags=4;
@@ -7385,7 +6874,7 @@ class Mission
 					};
 					id=1089;
 					type="O_Soldier_AAR_F";
-					atlOffset=0.022277832;
+					atlOffset=0.022247314;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -7434,8 +6923,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6412.9224,330.51895,8132.3862};
-						angles[]={6.2379279,2.2161577,0.018116074};
+						position[]={6274.374,338.41281,8021.9155};
+						angles[]={6.2791886,2.2161577,6.1362505};
 					};
 					side="East";
 					flags=4;
@@ -7496,8 +6985,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6412.4448,330.12094,8125.2007};
-						angles[]={6.2334056,2.2161577,0.01359328};
+						position[]={6273.8965,338.34445,8014.73};
+						angles[]={6.2618566,2.2161577,6.1414738};
 					};
 					side="East";
 					flags=4;
@@ -7509,7 +6998,7 @@ class Mission
 					};
 					id=1092;
 					type="O_Soldier_F";
-					atlOffset=0.019104004;
+					atlOffset=0.019134521;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -7558,8 +7047,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6412.1831,330.27478,8128.0342};
-						angles[]={6.2334056,2.2161577,0.01359328};
+						position[]={6273.6348,338.45828,8017.5635};
+						angles[]={6.2738504,2.2161577,6.1414742};
 					};
 					side="East";
 					flags=4;
@@ -7714,8 +7203,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6406.46,330.58542,8137.1899};
-						angles[]={6.2379279,2.2161577,0.01359328};
+						position[]={7236.645,278.44019,7435.7861};
+						angles[]={6.1703324,1.7368008,0.067897305};
 					};
 					side="East";
 					flags=6;
@@ -7725,6 +7214,7 @@ class Mission
 						rank="CORPORAL";
 						name="UNIT_OPF_B2_FTL";
 						description="OpFor Bravo 2 Fireteam Leader";
+						stance="Up";
 					};
 					id=1094;
 					type="O_Soldier_TL_F";
@@ -7776,8 +7266,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6405.6689,330.94247,8142.7334};
-						angles[]={6.2334056,2.2161577,0.01359328};
+						position[]={7233.3862,278.82285,7440.3398};
+						angles[]={6.187479,1.7368008,0.067896426};
 					};
 					side="East";
 					flags=4;
@@ -7786,10 +7276,11 @@ class Mission
 						skill=0.60000002;
 						name="UNIT_OPF_B2_AR";
 						description="OpFor Bravo 2 Automatic Rifleman";
+						stance="Up";
 					};
 					id=1095;
 					type="O_Soldier_AR_F";
-					atlOffset=0.093231201;
+					atlOffset=0.093261719;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -7838,8 +7329,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6408.4521,330.97073,8143.1328};
-						angles[]={6.2334056,2.2161577,0.01359328};
+						position[]={7235.6719,279.10529,7441.978};
+						angles[]={6.1954112,1.7368008,0.059930447};
 					};
 					side="East";
 					flags=4;
@@ -7848,10 +7339,11 @@ class Mission
 						skill=0.60000002;
 						name="UNIT_OPF_B2_AAR";
 						description="OpFor Bravo 2 Assistant Automatic Rifleman";
+						stance="Up";
 					};
 					id=1096;
 					type="O_Soldier_AAR_F";
-					atlOffset=0.063751221;
+					atlOffset=0.063812256;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -7900,8 +7392,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6401.6787,330.81146,8140.6729};
-						angles[]={6.2379279,2.2161577,0.009056299};
+						position[]={7230.7964,278.22318,7436.6714};
+						angles[]={6.155879,1.7368008,0.082477875};
 					};
 					side="East";
 					flags=4;
@@ -7910,10 +7402,11 @@ class Mission
 						skill=0.60000002;
 						name="UNIT_OPF_B2_AT1";
 						description="OpFor Bravo 2 Rifleman (AT)";
+						stance="Up";
 					};
 					id=1097;
 					type="O_Soldier_LAT_F";
-					atlOffset=0.11819458;
+					atlOffset=0.1182251;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -7962,8 +7455,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6401.126,330.36551,8133.5469};
-						angles[]={6.2379279,2.2161577,0.009056299};
+						position[]={7233.5923,277.49741,7430.0938};
+						angles[]={6.1571879,1.7368008,0.082478598};
 					};
 					side="East";
 					flags=4;
@@ -7972,9 +7465,11 @@ class Mission
 						skill=0.60000002;
 						name="UNIT_OPF_B2_R";
 						description="OpFor Bravo 2 Rifleman ";
+						stance="Up";
 					};
 					id=1099;
 					type="O_Soldier_F";
+					atlOffset=3.0517578e-005;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -8023,8 +7518,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6400.8677,330.5603,8136.3638};
-						angles[]={6.2379279,2.2161577,0.009056299};
+						position[]={7232.064,277.74203,7432.4736};
+						angles[]={6.1571879,1.7368008,0.082478598};
 					};
 					side="East";
 					flags=4;
@@ -8033,10 +7528,11 @@ class Mission
 						skill=0.60000002;
 						name="UNIT_OPF_B2_AT2";
 						description="OpFor Bravo 2 Rifleman (AT)";
+						stance="Up";
 					};
 					id=1328;
 					type="O_Soldier_LAT_F";
-					atlOffset=0.069519043;
+					atlOffset=0.069549561;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -8084,6 +7580,7 @@ class Mission
 			class Attributes
 			{
 				name="GROUP_OPF_B2";
+				formation="LINE";
 			};
 			id=1093;
 			class CustomAttributes
@@ -8179,8 +7676,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6412.2495,329.38498,8108.02};
-						angles[]={6.2379279,2.2161577,0.009056299};
+						position[]={6980.415,287.85779,7559.3076};
+						angles[]={6.183517,2.2161577,0.033321146};
 					};
 					side="East";
 					flags=6;
@@ -8193,7 +7690,6 @@ class Mission
 					};
 					id=1101;
 					type="O_Soldier_SL_F";
-					atlOffset=0.074768066;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -8242,8 +7738,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6408.4243,329.2782,8106.0269};
-						angles[]={6.2379293,2.2161577,0.0045281379};
+						position[]={6976.5898,287.52942,7557.3145};
+						angles[]={6.1821952,2.2161577,0.034652505};
 					};
 					side="East";
 					flags=4;
@@ -8256,7 +7752,6 @@ class Mission
 					};
 					id=1102;
 					type="O_medic_F";
-					atlOffset=0.074401855;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -8306,7 +7801,6 @@ class Mission
 				name="GROUP_OPF_CSL";
 			};
 			id=1100;
-			atlOffset=0.074768066;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -8394,14 +7888,14 @@ class Mission
 			side="East";
 			class Entities
 			{
-				items=6;
+				items=7;
 				class Item0
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6406.0186,329.6073,8112.7471};
-						angles[]={6.2424531,2.2161577,0.0045281379};
+						position[]={7449.9883,353.90863,8134.4097};
+						angles[]={6.2498641,2.2161577,0.13255134};
 					};
 					side="East";
 					flags=6;
@@ -8414,7 +7908,6 @@ class Mission
 					};
 					id=1104;
 					type="O_Soldier_TL_F";
-					atlOffset=0.13363647;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -8463,20 +7956,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6405.0786,329.89136,8118.3706};
-						angles[]={6.2379279,2.2161622,0.009056299};
+						position[]={7451.9038,354.28268,8140.3911};
+						angles[]={6.2658496,2.2161622,0.12468339};
 					};
 					side="East";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
-						name="UNIT_OPF_C1_AR";
-						description="OpFor Charlie 1 Automatic Rifleman";
+						name="UNIT_OPF_C1_AAR";
+						description="OpFor Charlie 1 Assistant Automatic Rifleman";
 					};
-					id=1105;
-					type="O_Soldier_AR_F";
-					atlOffset=0.17733765;
+					id=1106;
+					type="O_Soldier_AAR_F";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -8525,20 +8017,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6407.9341,329.91122,8118.7285};
-						angles[]={6.2379279,2.2161622,0.009056299};
+						position[]={7445.0674,353.42654,8137.9141};
+						angles[]={6.2618566,2.2161577,0.107583};
 					};
 					side="East";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
-						name="UNIT_OPF_C1_AAR";
-						description="OpFor Charlie 1 Assistant Automatic Rifleman";
+						name="UNIT_OPF_C1_AT1";
+						description="OpFor Charlie 1 Rifleman (AT)";
 					};
-					id=1106;
-					type="O_Soldier_AAR_F";
-					atlOffset=0.15512085;
+					id=1107;
+					type="O_Soldier_LAT_F";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -8575,7 +8066,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="RED";
+									value="MAIN";
 								};
 							};
 						};
@@ -8587,20 +8078,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6401.0977,329.79773,8116.2515};
-						angles[]={6.2379293,2.2161577,0.0045281379};
+						position[]={7444.5742,353.12634,8130.7339};
+						angles[]={6.2445364,2.2161577,0.11285285};
 					};
 					side="East";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
-						name="UNIT_OPF_C1_AT1";
-						description="OpFor Charlie 1 Rifleman (AT)";
+						name="UNIT_OPF_C1_R";
+						description="OpFor Charlie 1 Rifleman ";
 					};
-					id=1107;
-					type="O_Soldier_LAT_F";
-					atlOffset=0.19805908;
+					id=1109;
+					type="O_Soldier_F";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -8649,20 +8139,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6400.6045,329.45285,8109.0713};
-						angles[]={6.2469716,2.2161577,0};
+						position[]={7444.3584,353.2088,8133.5474};
+						angles[]={6.2498641,2.2161577,0.10758245};
 					};
 					side="East";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
-						name="UNIT_OPF_C1_R";
-						description="OpFor Charlie 1 Rifleman ";
+						name="UNIT_OPF_C1_AT2";
+						description="OpFor Charlie 1 Rifleman (AT)";
 					};
-					id=1109;
-					type="O_Soldier_F";
-					atlOffset=0.14050293;
+					id=1329;
+					type="O_Soldier_LAT_F";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -8708,65 +8197,27 @@ class Mission
 				};
 				class Item5
 				{
-					dataType="Object";
-					class PositionInfo
+					dataType="Waypoint";
+					position[]={7684.436,367.46436,7933.6533};
+					class Effects
 					{
-						position[]={6400.3887,329.5802,8111.8848};
-						angles[]={6.2469716,2.2161577,0};
 					};
-					side="East";
-					flags=4;
-					class Attributes
+					showWP="NEVER";
+					id=1428;
+					type="Move";
+					atlOffset=-0.0007019043;
+				};
+				class Item6
+				{
+					dataType="Waypoint";
+					position[]={7458.8169,354.95215,8127.9248};
+					type="Cycle";
+					class Effects
 					{
-						skill=0.60000002;
-						name="UNIT_OPF_C1_AT2";
-						description="OpFor Charlie 1 Rifleman (AT)";
 					};
-					id=1329;
-					type="O_Soldier_LAT_F";
-					atlOffset=0.16589355;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="potato_radios_radio";
-							expression="[_this, _value] call potato_radios_fnc_setChannels";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="2,0,0";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="potato_teamColors_teamColor";
-							expression="[_this, _value] call potato_teamColors_fnc_setColor";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="MAIN";
-								};
-							};
-						};
-						nAttributes=2;
-					};
+					showWP="NEVER";
+					id=1429;
+					atlOffset=-0.00054931641;
 				};
 			};
 			class Attributes
@@ -8774,7 +8225,6 @@ class Mission
 				name="GROUP_OPF_C1";
 			};
 			id=1103;
-			atlOffset=0.13363647;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -8868,8 +8318,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6394.7158,329.78851,8121.0586};
-						angles[]={6.2379293,2.2161577,0.0045281379};
+						position[]={6699.9131,296.51163,7743.0752};
+						angles[]={6.2073302,2.2161577,6.2418756};
 					};
 					side="East";
 					flags=6;
@@ -8930,8 +8380,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6393.8789,330.09369,8126.6455};
-						angles[]={6.2424531,2.2161622,0.0045281379};
+						position[]={6704.9331,297.21014,7755.1167};
+						angles[]={6.2033591,2.2161622,6.2338881};
 					};
 					side="East";
 					flags=4;
@@ -8943,7 +8393,6 @@ class Mission
 					};
 					id=1112;
 					type="O_Soldier_AR_F";
-					atlOffset=0.074523926;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -8992,8 +8441,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6396.7988,330.07333,8126.8428};
-						angles[]={6.2424531,2.2161622,0.0045281379};
+						position[]={6710.7861,297.8367,7766.666};
+						angles[]={6.2033544,2.2161622,6.2272472};
 					};
 					side="East";
 					flags=4;
@@ -9005,7 +8454,6 @@ class Mission
 					};
 					id=1113;
 					type="O_Soldier_AAR_F";
-					atlOffset=0.032897949;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -9054,8 +8502,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6389.9146,330.0257,8124.5254};
-						angles[]={6.242444,2.2161577,0};
+						position[]={6696.8799,296.12256,7735.9341};
+						angles[]={6.2139606,2.2161577,6.2405448};
 					};
 					side="East";
 					flags=4;
@@ -9067,7 +8515,6 @@ class Mission
 					};
 					id=1114;
 					type="O_Soldier_LAT_F";
-					atlOffset=0.11053467;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -9116,8 +8563,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6389.5298,329.66019,8117.3647};
-						angles[]={6.2424531,2.2161577,0};
+						position[]={6689.0308,295.65036,7725.1382};
+						angles[]={6.208653,2.2161577,6.2498641};
 					};
 					side="East";
 					flags=4;
@@ -9129,7 +8576,6 @@ class Mission
 					};
 					id=1116;
 					type="O_Soldier_F";
-					atlOffset=0.036865234;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -9178,8 +8624,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6389.1636,329.81186,8120.1841};
-						angles[]={6.2424531,2.2161577,0};
+						position[]={6693.7446,296.01956,7732.8511};
+						angles[]={6.2073302,2.2161577,6.2471976};
 					};
 					side="East";
 					flags=4;
@@ -9191,7 +8637,6 @@ class Mission
 					};
 					id=1330;
 					type="O_Soldier_LAT_F";
-					atlOffset=0.073638916;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -9334,8 +8779,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6390.897,330.39194,8136.123};
-						angles[]={6.2424531,2.2161577,0.0045281379};
+						position[]={6154.916,338.59052,8002.29};
+						angles[]={6.1398358,2.4712,0.14851169};
 					};
 					side="East";
 					flags=6;
@@ -9377,8 +8822,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6388.1323,330.39783,8135.5835};
-						angles[]={6.2424531,2.2161577,0.0045281379};
+						position[]={6154.916,338.59052,8002.29};
+						angles[]={6.1398358,2.4712,0.14851169};
 					};
 					side="East";
 					flags=4;
@@ -9391,7 +8836,6 @@ class Mission
 					};
 					id=1139;
 					type="O_crew_F";
-					atlOffset=0.040374756;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -9421,8 +8865,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6390.5747,330.56097,8138.9429};
-						angles[]={6.2379279,2.2161577,0.009056299};
+						position[]={6154.916,338.59052,8002.29};
+						angles[]={6.1398358,2.4712,0.14851169};
 					};
 					side="East";
 					flags=4;
@@ -9434,7 +8878,6 @@ class Mission
 					};
 					id=1140;
 					type="O_soldier_repair_F";
-					atlOffset=0.046630859;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -9464,7 +8907,51 @@ class Mission
 			{
 				name="GROUP_OPF_IFV1";
 			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=3;
+				};
+				class Links
+				{
+					items=3;
+					class Item0
+					{
+						linkID=0;
+						item0=1138;
+						item1=1366;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=1139;
+						item1=1366;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0,0};
+						};
+					};
+					class Item2
+					{
+						linkID=2;
+						item0=1140;
+						item1=1366;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
 			id=1137;
+			atlOffset=0.080505371;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -11490,6 +10977,2593 @@ class Mission
 					};
 				};
 				nAttributes=8;
+			};
+		};
+		class Item53
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6154.9131,338.71869,8001.7202};
+				angles[]={6.1398358,2.4712,0.14851169};
+			};
+			side="East";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1366;
+			type="uns_m551";
+			atlOffset=0.080505371;
+		};
+		class Item54
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=3;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={5880.1548,316.43005,7591.0386};
+						angles[]={6.198061,1.9137756,6.2458706};
+					};
+					side="East";
+					flags=6;
+					class Attributes
+					{
+						skill=0.60000002;
+						rank="SERGEANT";
+						name="UNIT_OPF_IFV1_C_1";
+						description="OpFor IFV 1 Commander";
+					};
+					id=1368;
+					type="O_crew_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="potato_radios_radio";
+							expression="[_this, _value] call potato_radios_fnc_setChannels";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="7,8,4";
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={5880.1548,316.43005,7591.0386};
+						angles[]={6.198061,1.9137756,6.2458706};
+					};
+					side="East";
+					flags=4;
+					class Attributes
+					{
+						skill=0.60000002;
+						rank="CORPORAL";
+						name="UNIT_OPF_IFV1_G_1";
+						description="OpFor IFV 1 Gunner";
+					};
+					id=1369;
+					type="O_crew_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="potato_radios_radio";
+							expression="[_this, _value] call potato_radios_fnc_setChannels";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="7,8,4";
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={5880.1548,316.43005,7591.0386};
+						angles[]={6.198061,1.9137756,6.2458706};
+					};
+					side="East";
+					flags=4;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="UNIT_OPF_IFV1_D_1";
+						description="OpFor IFV 1 Driver (Repair)";
+					};
+					id=1370;
+					type="O_soldier_repair_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="potato_radios_radio";
+							expression="[_this, _value] call potato_radios_fnc_setChannels";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="7,8,4";
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+			};
+			class Attributes
+			{
+				name="GROUP_OPF_IFV1_1";
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=3;
+				};
+				class Links
+				{
+					items=3;
+					class Item0
+					{
+						linkID=0;
+						item0=1368;
+						item1=1371;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=1369;
+						item1=1371;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0,0};
+						};
+					};
+					class Item2
+					{
+						linkID=2;
+						item0=1370;
+						item1=1371;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=1367;
+			atlOffset=-3.0517578e-005;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="potato_zeusHC_move_to_hc";
+					expression="[_this, _value] call potato_zeusHC_fnc_transferSetVar";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="potato_markers_addMarker";
+					expression="[_this, _value] call potato_markers_fnc_setMarker;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Ham1,26,orange,sc_mapmarkers\data\armored.paa";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="potato_radios_radio";
+					expression="[_this, _value] call potato_radios_fnc_setChannels";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="10,5,3";
+						};
+					};
+				};
+				nAttributes=3;
+			};
+		};
+		class Item55
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5880.1416,316.50638,7590.4585};
+				angles[]={6.198061,1.9137756,6.2458706};
+			};
+			side="East";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1371;
+			type="uns_m551";
+			atlOffset=-3.0517578e-005;
+		};
+		class Item56
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=8;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6894.9946,301.80728,8002.6646};
+						angles[]={6.2498641,3.5064673,0.0013372133};
+					};
+					side="East";
+					flags=6;
+					class Attributes
+					{
+						skill=0.60000002;
+						rank="CORPORAL";
+						name="UNIT_OPF_A1_FTL_1";
+						description="OpFor Alpha 1 Fireteam Leader";
+					};
+					id=1373;
+					type="O_Soldier_TL_F";
+					atlOffset=0.0086669922;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="potato_radios_radio";
+							expression="[_this, _value] call potato_radios_fnc_setChannels";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="0,0,0";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="potato_teamColors_teamColor";
+							expression="[_this, _value] call potato_teamColors_fnc_setColor";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="RED";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6900.2114,301.9718,8004.9473};
+						angles[]={6.249866,3.5064673,0.0039967569};
+					};
+					side="East";
+					flags=4;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="UNIT_OPF_A1_AR_1";
+						description="OpFor Alpha 1 Automatic Rifleman";
+					};
+					id=1374;
+					type="O_Soldier_AR_F";
+					atlOffset=0.089599609;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="potato_radios_radio";
+							expression="[_this, _value] call potato_radios_fnc_setChannels";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="0,0,0";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="potato_teamColors_teamColor";
+							expression="[_this, _value] call potato_teamColors_fnc_setColor";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="RED";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6901.4409,301.87762,8002.3379};
+						angles[]={6.253861,3.5064673,0.0039967569};
+					};
+					side="East";
+					flags=4;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="UNIT_OPF_A1_AAR_1";
+						description="OpFor Alpha 1 Assistant Automatic Rifleman";
+					};
+					id=1375;
+					type="O_Soldier_AAR_F";
+					atlOffset=0.076629639;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="potato_radios_radio";
+							expression="[_this, _value] call potato_radios_fnc_setChannels";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="0,0,0";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="potato_teamColors_teamColor";
+							expression="[_this, _value] call potato_teamColors_fnc_setColor";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="RED";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6897.1406,302.07285,8008.1167};
+						angles[]={6.2498641,3.5064673,0.0013372133};
+					};
+					side="East";
+					flags=4;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="UNIT_OPF_A1_AT1_1";
+						description="OpFor Alpha 1 Rifleman (AT)";
+					};
+					id=1376;
+					type="O_Soldier_LAT_F";
+					atlOffset=0.089660645;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="potato_radios_radio";
+							expression="[_this, _value] call potato_radios_fnc_setChannels";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="0,0,0";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="potato_teamColors_teamColor";
+							expression="[_this, _value] call potato_teamColors_fnc_setColor";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="MAIN";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6890.2188,301.94339,8006.6255};
+						angles[]={6.249866,3.5064673,6.2791886};
+					};
+					side="East";
+					flags=4;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="UNIT_OPF_A1_R_1";
+						description="OpFor Alpha 1 Rifleman ";
+					};
+					id=1377;
+					type="O_Soldier_F";
+					atlOffset=0.0069580078;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="potato_radios_radio";
+							expression="[_this, _value] call potato_radios_fnc_setChannels";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="0,0,0";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="potato_teamColors_teamColor";
+							expression="[_this, _value] call potato_teamColors_fnc_setColor";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="MAIN";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item5
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6892.8926,302.00171,8007.7285};
+						angles[]={6.2498641,3.5064673,0.0013372133};
+					};
+					side="East";
+					flags=4;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="UNIT_OPF_A1_AT2_1";
+						description="OpFor Alpha 1 Rifleman (AT)";
+					};
+					id=1378;
+					type="O_Soldier_LAT_F";
+					atlOffset=0.037109375;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="potato_radios_radio";
+							expression="[_this, _value] call potato_radios_fnc_setChannels";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="0,0,0";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="potato_teamColors_teamColor";
+							expression="[_this, _value] call potato_teamColors_fnc_setColor";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="MAIN";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item6
+				{
+					dataType="Waypoint";
+					position[]={6859.9482,289.86121,7665.9722};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=1379;
+					type="Move";
+					atlOffset=-6.1035156e-005;
+				};
+				class Item7
+				{
+					dataType="Waypoint";
+					position[]={6893.7344,301.56061,7994.9658};
+					type="Cycle";
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=1380;
+					atlOffset=-3.0517578e-005;
+				};
+			};
+			class Attributes
+			{
+				name="GROUP_OPF_A1_1";
+			};
+			id=1372;
+			atlOffset=0.0086669922;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="potato_zeusHC_move_to_hc";
+					expression="[_this, _value] call potato_zeusHC_fnc_transferSetVar";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="potato_markers_addMarker";
+					expression="[_this, _value] call potato_markers_fnc_setMarker;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="A1,26,red,sc_mapmarkers\data\fireteam.paa";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="potato_radios_radio";
+					expression="[_this, _value] call potato_radios_fnc_setChannels";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0,0,0";
+						};
+					};
+				};
+				nAttributes=3;
+			};
+		};
+		class Item57
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7241.5752,294.92014,7626.3281};
+				angles[]={0,5.0991845,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1381;
+			type="Land_BagBunker_Large_F";
+		};
+		class Item58
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7243.9341,294.17944,7622.0439};
+						angles[]={0,2.2161493,0};
+					};
+					side="East";
+					flags=6;
+					class Attributes
+					{
+						skill=0.60000002;
+						rank="CORPORAL";
+						init="this setUnitPos ""UP"";";
+						name="UNIT_OPF_ASL_M";
+						description="OpFor Alpha Medic";
+					};
+					id=1068;
+					type="O_medic_F";
+					atlOffset=0.17800903;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="potato_markers_addMarker";
+							expression="[_this, _value] call potato_markers_fnc_setMarker;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value=" ,16,red,sc_mapmarkers\data\u_medic.paa";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="potato_radios_radio";
+							expression="[_this, _value] call potato_radios_fnc_setChannels";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="0,0,0";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1382;
+			atlOffset=0.17800903;
+		};
+		class Item59
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7245.2881,294.17966,7625.1567};
+						angles[]={0,2.0178449,0};
+					};
+					side="East";
+					flags=6;
+					class Attributes
+					{
+						skill=0.60000002;
+						init="this setUnitPos ""UP"";";
+						name="UNIT_OPF_C1_AR";
+						description="OpFor Charlie 1 Automatic Rifleman";
+					};
+					id=1105;
+					type="O_Soldier_AR_F";
+					atlOffset=0.1789856;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="potato_radios_radio";
+							expression="[_this, _value] call potato_radios_fnc_setChannels";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="2,0,0";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="potato_teamColors_teamColor";
+							expression="[_this, _value] call potato_teamColors_fnc_setColor";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="MAIN";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1383;
+			atlOffset=0.1789856;
+		};
+		class Item60
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7249.2783,294.92761,7697.2715};
+				angles[]={6.2791886,4.560998,6.2791886};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1384;
+			type="Fort_Nest";
+		};
+		class Item61
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7279.5825,296.79379,7662.582};
+				angles[]={6.211309,5.2857842,0.16385399};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1385;
+			type="Fort_Nest";
+			atlOffset=0.064544678;
+		};
+		class Item62
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=9;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6984.2529,293.99377,7692.2905};
+						angles[]={0,2.2161577,0.0012918708};
+					};
+					side="East";
+					flags=6;
+					class Attributes
+					{
+						skill=0.60000002;
+						rank="CORPORAL";
+						name="UNIT_OPF_A2_FTL_1";
+						description="OpFor Alpha 2 Fireteam Leader";
+					};
+					id=1387;
+					type="O_Soldier_TL_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="potato_radios_radio";
+							expression="[_this, _value] call potato_radios_fnc_setChannels";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="0,0,0";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="potato_teamColors_teamColor";
+							expression="[_this, _value] call potato_teamColors_fnc_setColor";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="BLUE";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6986.2612,294.07083,7698.2847};
+						angles[]={6.2818484,2.2161577,0.0013372133};
+					};
+					side="East";
+					flags=4;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="UNIT_OPF_A2_AAR_1";
+						description="OpFor Alpha 2 Assistant Automatic Rifleman";
+					};
+					id=1389;
+					type="O_Soldier_AAR_F";
+					atlOffset=0.070068359;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="potato_radios_radio";
+							expression="[_this, _value] call potato_radios_fnc_setChannels";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="0,0,0";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="potato_teamColors_teamColor";
+							expression="[_this, _value] call potato_teamColors_fnc_setColor";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="BLUE";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6979.459,294.10056,7695.8501};
+						angles[]={0,2.2161577,0};
+					};
+					side="East";
+					flags=4;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="UNIT_OPF_A2_AT1_1";
+						description="OpFor Alpha 2 Rifleman (AT)";
+					};
+					id=1390;
+					type="O_Soldier_LAT_F";
+					atlOffset=0.10913086;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="potato_radios_radio";
+							expression="[_this, _value] call potato_radios_fnc_setChannels";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="0,0,0";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="potato_teamColors_teamColor";
+							expression="[_this, _value] call potato_teamColors_fnc_setColor";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="MAIN";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6979.2373,293.99258,7688.7334};
+						angles[]={0,2.2161577,0};
+					};
+					side="East";
+					flags=4;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="UNIT_OPF_A2_R_1";
+						description="OpFor Alpha 2 Rifleman ";
+					};
+					id=1391;
+					type="O_Soldier_F";
+					atlOffset=0.001159668;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="potato_radios_radio";
+							expression="[_this, _value] call potato_radios_fnc_setChannels";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="0,0,0";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="potato_teamColors_teamColor";
+							expression="[_this, _value] call potato_teamColors_fnc_setColor";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="MAIN";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item4
+				{
+					dataType="Waypoint";
+					position[]={7036.0737,293.98999,7708.2417};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=1402;
+					type="Move";
+				};
+				class Item5
+				{
+					dataType="Waypoint";
+					position[]={7055.1606,293.98996,7678.0815};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=1403;
+					type="Move";
+					atlOffset=-3.0517578e-005;
+				};
+				class Item6
+				{
+					dataType="Waypoint";
+					position[]={7153.0854,293.98758,7698.4839};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=1404;
+					type="Move";
+					atlOffset=0.00012207031;
+				};
+				class Item7
+				{
+					dataType="Waypoint";
+					position[]={6970.7129,294.00568,7653.3667};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=1405;
+					type="Move";
+					atlOffset=-3.0517578e-005;
+				};
+				class Item8
+				{
+					dataType="Waypoint";
+					position[]={7046.1577,293.98996,7675.1504};
+					type="Cycle";
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=1406;
+					atlOffset=-3.0517578e-005;
+				};
+			};
+			class Attributes
+			{
+				name="GROUP_OPF_A2_1";
+			};
+			id=1386;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="potato_zeusHC_move_to_hc";
+					expression="[_this, _value] call potato_zeusHC_fnc_transferSetVar";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="potato_markers_addMarker";
+					expression="[_this, _value] call potato_markers_fnc_setMarker;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="A2,26,red,sc_mapmarkers\data\fireteam.paa";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="potato_radios_radio";
+					expression="[_this, _value] call potato_radios_fnc_setChannels";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0,0,0";
+						};
+					};
+				};
+				nAttributes=3;
+			};
+		};
+		class Item63
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7280.4629,295.89352,7662.394};
+						angles[]={6.2113123,2.2161493,0.1638515};
+					};
+					side="East";
+					flags=6;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="UNIT_OPF_A2_AT2_1";
+						description="OpFor Alpha 2 Rifleman (AT)";
+					};
+					id=1392;
+					type="O_Soldier_LAT_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="potato_radios_radio";
+							expression="[_this, _value] call potato_radios_fnc_setChannels";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="0,0,0";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="potato_teamColors_teamColor";
+							expression="[_this, _value] call potato_teamColors_fnc_setColor";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="MAIN";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+				init="this setUnitPos ""UP"";";
+			};
+			id=1393;
+		};
+		class Item64
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7250.1118,293.96036,7697.3926};
+						angles[]={6.2791882,1.6320225,6.2791882};
+					};
+					side="East";
+					flags=6;
+					class Attributes
+					{
+						skill=0.60000002;
+						init="this setUnitPos ""UP"";";
+						name="UNIT_OPF_A2_AR_1";
+						description="OpFor Alpha 2 Automatic Rifleman";
+					};
+					id=1388;
+					type="O_Soldier_AR_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="potato_radios_radio";
+							expression="[_this, _value] call potato_radios_fnc_setChannels";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="0,0,0";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="potato_teamColors_teamColor";
+							expression="[_this, _value] call potato_teamColors_fnc_setColor";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="MAIN";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1394;
+		};
+		class Item65
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7161.9673,282.39279,7552.5303};
+						angles[]={6.1219311,1.6429443,0.04796565};
+					};
+					side="East";
+					flags=6;
+					class Attributes
+					{
+						skill=0.60000002;
+						rank="CORPORAL";
+						name="UNIT_OPF_A1_FTL";
+						description="OpFor Alpha 1 Fireteam Leader";
+					};
+					id=1070;
+					type="O_Soldier_TL_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="potato_radios_radio";
+							expression="[_this, _value] call potato_radios_fnc_setChannels";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="0,0,0";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="potato_teamColors_teamColor";
+							expression="[_this, _value] call potato_teamColors_fnc_setColor";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="RED";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1397;
+		};
+		class Item66
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7132.2188,279.96542,7523.0767};
+						angles[]={6.253861,1.6429443,0.0053265258};
+					};
+					side="East";
+					flags=6;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="UNIT_OPF_A1_AR";
+						description="OpFor Alpha 1 Automatic Rifleman";
+					};
+					id=1071;
+					type="O_Soldier_AR_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="potato_radios_radio";
+							expression="[_this, _value] call potato_radios_fnc_setChannels";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="0,0,0";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="potato_teamColors_teamColor";
+							expression="[_this, _value] call potato_teamColors_fnc_setColor";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="RED";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1398;
+		};
+		class Item67
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7136.438,283.58902,7558.9736};
+						angles[]={6.1258302,1.6429443,0.017332481};
+					};
+					side="East";
+					flags=6;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="UNIT_OPF_A1_AAR";
+						description="OpFor Alpha 1 Assistant Automatic Rifleman";
+					};
+					id=1072;
+					type="O_Soldier_AAR_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="potato_radios_radio";
+							expression="[_this, _value] call potato_radios_fnc_setChannels";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="0,0,0";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="potato_teamColors_teamColor";
+							expression="[_this, _value] call potato_teamColors_fnc_setColor";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="RED";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1399;
+		};
+		class Item68
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7118.2563,292.66541,7624.188};
+						angles[]={6.2179461,1.6429443,6.22193};
+					};
+					side="East";
+					flags=6;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="UNIT_OPF_A1_AT1";
+						description="OpFor Alpha 1 Rifleman (AT)";
+					};
+					id=1073;
+					type="O_Soldier_LAT_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="potato_radios_radio";
+							expression="[_this, _value] call potato_radios_fnc_setChannels";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="0,0,0";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="potato_teamColors_teamColor";
+							expression="[_this, _value] call potato_teamColors_fnc_setColor";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="MAIN";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1400;
+		};
+		class Item69
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7139.9453,279.86688,7492.2954};
+						angles[]={6.2259164,1.2105539,0};
+					};
+					side="East";
+					flags=6;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="UNIT_OPF_A1_AT2";
+						description="OpFor Alpha 1 Rifleman (AT)";
+					};
+					id=1325;
+					type="O_Soldier_LAT_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="potato_radios_radio";
+							expression="[_this, _value] call potato_radios_fnc_setChannels";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="0,0,0";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="potato_teamColors_teamColor";
+							expression="[_this, _value] call potato_teamColors_fnc_setColor";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="MAIN";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1401;
+		};
+		class Item70
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7025.769,292.82474,7597.6855};
+				angles[]={6.200707,5.0951343,6.2778478};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1407;
+			type="Land_fortified_nest_big";
+		};
+		class Item71
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7030.5454,292.20517,7599.5366};
+						angles[]={6.200707,1.8650119,6.2778254};
+					};
+					side="East";
+					flags=6;
+					class Attributes
+					{
+						skill=0.60000002;
+						init="this setUnitPos ""UP"";";
+						name="UNIT_OPF_A2_AR";
+						description="OpFor Alpha 2 Automatic Rifleman";
+					};
+					id=1078;
+					type="O_Soldier_AR_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="potato_radios_radio";
+							expression="[_this, _value] call potato_radios_fnc_setChannels";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="0,0,0";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="potato_teamColors_teamColor";
+							expression="[_this, _value] call potato_teamColors_fnc_setColor";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="MAIN";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1408;
+		};
+		class Item72
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7029.5781,291.94608,7596.3398};
+						angles[]={6.200707,2.2161493,6.2778254};
+					};
+					side="East";
+					flags=6;
+					class Attributes
+					{
+						skill=0.60000002;
+						init="this setUnitPos ""UP"";";
+						name="UNIT_OPF_A2_AT1";
+						description="OpFor Alpha 2 Rifleman (AT)";
+					};
+					id=1080;
+					type="O_Soldier_LAT_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="potato_radios_radio";
+							expression="[_this, _value] call potato_radios_fnc_setChannels";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="0,0,0";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="potato_teamColors_teamColor";
+							expression="[_this, _value] call potato_teamColors_fnc_setColor";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="MAIN";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1409;
+		};
+		class Item73
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7027.9917,291.71213,7593.4067};
+						angles[]={6.200707,2.2161493,6.2778254};
+					};
+					side="East";
+					flags=6;
+					class Attributes
+					{
+						skill=0.60000002;
+						init="this setUnitPos ""UP"";";
+						name="UNIT_OPF_A2_AT2";
+						description="OpFor Alpha 2 Rifleman (AT)";
+					};
+					id=1326;
+					type="O_Soldier_LAT_F";
+					atlOffset=3.0517578e-005;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="potato_radios_radio";
+							expression="[_this, _value] call potato_radios_fnc_setChannels";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="0,0,0";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="potato_teamColors_teamColor";
+							expression="[_this, _value] call potato_teamColors_fnc_setColor";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="MAIN";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1410;
+			atlOffset=3.0517578e-005;
+		};
+		class Item74
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=5;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7179.9912,293.99142,7688.2783};
+						angles[]={0,1.7705365,0};
+					};
+					side="East";
+					flags=6;
+					class Attributes
+					{
+						skill=0.60000002;
+						rank="SERGEANT";
+						name="UNIT_OPF_IFV2_C_3";
+						description="OpFor IFV 2 Commander";
+					};
+					id=1419;
+					type="O_crew_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="potato_radios_radio";
+							expression="[_this, _value] call potato_radios_fnc_setChannels";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="7,8,4";
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7179.9912,293.99142,7688.2783};
+						angles[]={0,1.7705365,0};
+					};
+					side="East";
+					flags=4;
+					class Attributes
+					{
+						skill=0.60000002;
+						rank="CORPORAL";
+						name="UNIT_OPF_IFV2_G_3";
+						description="OpFor IFV 2 Gunner";
+					};
+					id=1420;
+					type="O_crew_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="potato_radios_radio";
+							expression="[_this, _value] call potato_radios_fnc_setChannels";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="7,8,4";
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7179.9912,293.99142,7688.2783};
+						angles[]={0,1.7705365,0};
+					};
+					side="East";
+					flags=4;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="UNIT_OPF_IFV2_D_3";
+						description="OpFor IFV 2 Driver (Repair)";
+					};
+					id=1421;
+					type="O_soldier_repair_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="potato_radios_radio";
+							expression="[_this, _value] call potato_radios_fnc_setChannels";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="7,8,4";
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item3
+				{
+					dataType="Waypoint";
+					position[]={7179.8135,294.47437,7688.0361};
+					type="Hold";
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=1425;
+					atlOffset=0.484375;
+					class AttachedTo
+					{
+						id=1422;
+						offset[]={0,0.5,0};
+					};
+				};
+				class Item4
+				{
+					dataType="Waypoint";
+					position[]={7891.2837,338.18042,7223.5181};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=1423;
+					type="Move";
+				};
+			};
+			class Attributes
+			{
+				name="GROUP_OPF_IFV2_3";
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=3;
+				};
+				class Links
+				{
+					items=3;
+					class Item0
+					{
+						linkID=0;
+						item0=1419;
+						item1=1422;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=1420;
+						item1=1422;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+					class Item2
+					{
+						linkID=2;
+						item0=1421;
+						item1=1422;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={1};
+						};
+					};
+				};
+			};
+			id=1418;
+			atlOffset=-0.015625;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="potato_zeusHC_move_to_hc";
+					expression="[_this, _value] call potato_zeusHC_fnc_transferSetVar";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="potato_markers_addMarker";
+					expression="[_this, _value] call potato_markers_fnc_setMarker;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="IFV2,26,orange,sc_mapmarkers\data\armored.paa";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="potato_radios_radio";
+					expression="[_this, _value] call potato_radios_fnc_setChannels";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="10,5,3";
+						};
+					};
+				};
+				nAttributes=3;
+			};
+		};
+		class Item75
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7179.8135,296.17511,7688.0361};
+				angles[]={0,1.7705365,0};
+			};
+			side="East";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1422;
+			type="rhsgref_ins_bmp1";
+			atlOffset=-0.015625;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="crate_l3_unhide";
+					expression="[_this,_value,'crate_l3_unhide'] call rhs_fnc_setHabarEden";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="crate_r3_unhide";
+					expression="[_this,_value,'crate_r3_unhide'] call rhs_fnc_setHabarEden";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="wood_2_unhide";
+					expression="[_this,_value,'wood_2_unhide'] call rhs_fnc_setHabarEden";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="crate_l2_unhide";
+					expression="[_this,_value,'crate_l2_unhide'] call rhs_fnc_setHabarEden";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="crate_r2_unhide";
+					expression="[_this,_value,'crate_r2_unhide'] call rhs_fnc_setHabarEden";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="wood_1_unhide";
+					expression="[_this,_value,'wood_1_unhide'] call rhs_fnc_setHabarEden";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="crate_l1_unhide";
+					expression="[_this,_value,'crate_l1_unhide'] call rhs_fnc_setHabarEden";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="crate_r1_unhide";
+					expression="[_this,_value,'crate_r1_unhide'] call rhs_fnc_setHabarEden";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=8;
+			};
+		};
+		class Item76
+		{
+			dataType="Trigger";
+			position[]={8079.6021,347.36652,7034.6929};
+			class Attributes
+			{
+				sizeA=250;
+				sizeB=250;
+				activationBy="WEST";
+				type="SWITCH";
+			};
+			id=1424;
+			type="EmptyDetectorAreaR250";
+		};
+	};
+	class Connections
+	{
+		class LinkIDProvider
+		{
+			nextID=1;
+		};
+		class Links
+		{
+			items=1;
+			class Item0
+			{
+				linkID=0;
+				item0=1425;
+				item1=1424;
+				class CustomData
+				{
+					type="WaypointActivation";
+				};
 			};
 		};
 	};
