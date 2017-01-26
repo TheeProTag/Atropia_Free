@@ -1,4 +1,6 @@
 ## BWMF Version 5.0 ##
+No
+
 * Moved most of the framework (map markers, team colors, assign gear, and radios) to the POTATO mod
 * Expanded each faction to company strength, and configured them for the new marker, team color, and radio systems
 * Tweaked base AI settings to higher min values
